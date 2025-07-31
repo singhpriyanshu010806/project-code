@@ -1,3 +1,5 @@
+/* Reset and Base Styles */
+
 * {
     margin: 0;
     padding: 0;
@@ -9,11 +11,30 @@ body {
     line-height: 1.6;
 }
 
-header {
+
+/* Header Styles */
+
+.main-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     background: #333;
     color: white;
-    padding: 10px;
-    text-align: center;
+    padding: 10px 20px;
+}
+
+.header-left {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo {
+    height: 60px;
+}
+
+header h1 {
+    margin: 0;
 }
 
 nav ul {
@@ -28,6 +49,9 @@ nav ul li a {
     text-decoration: none;
 }
 
+
+/* Hero Section */
+
 .hero {
     text-align: center;
     padding: 50px 20px;
@@ -41,6 +65,9 @@ nav ul li a {
     border: none;
     cursor: pointer;
 }
+
+
+/* Section Layout */
 
 .section {
     padding: 20px;
@@ -76,6 +103,9 @@ nav ul li a {
     cursor: pointer;
 }
 
+
+/* Footer */
+
 footer {
     background: #333;
     color: white;
@@ -85,6 +115,9 @@ footer {
     bottom: 0;
     width: 100%;
 }
+
+
+/* Cart Modal */
 
 .cart-modal {
     display: none;
