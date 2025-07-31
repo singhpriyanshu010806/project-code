@@ -10,7 +10,30 @@
 
 <body>
     <header>
-        <h1>Bhai Ki Dukan</h1>
+
+        <header class="main-header">
+            <div class="header-left">
+                <img src="logo.jpg" alt="Bhai Ki Dukan Logo" class="logo">
+                <h1>Bhai Ki Dukan</h1>
+            </div>
+
+            <div class="search-bar">
+                <input type="text" id="search-input" placeholder="Search products...">
+                <button id="search-button">Search</button>
+            </div>
+
+            <nav>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#mens">Men's Clothing</a></li>
+                    <li><a href="#womens">Women's Clothing</a></li>
+                    <li><a href="#accessories">Accessories</a></li>
+                    <li><a href="#" id="cart-count">Cart (0)</a></li>
+                </ul>
+            </nav>
+        </header>
+
+
         <nav>
             <ul>
                 <li><a href="#home">Home</a></li>
@@ -212,7 +235,7 @@
 
     <div class="cart-modal" id="cart-modal">
         <div class="cart-content">
-            <button onclick="toggleCart()">Close</button>
+            <button id="close-cart">Close</button>
             <h2>Your Cart</h2>
             <ul id="cart-items"></ul>
         </div>
