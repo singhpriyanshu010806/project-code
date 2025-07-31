@@ -35,12 +35,43 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    const closeCartButton = document.querySelector('.cart-content button');
-    closeCartButton.addEventListener('click', toggleCart);
+    const closeCartButton = document.getElementById('close-cart');
+    if (closeCartButton) {
+        closeCartButton.addEventListener('click', toggleCart);
+    } else {
+        console.error('Close cart button not found');
+    }
 
     const cartLink = document.querySelector('nav ul li:last-child a');
     cartLink.addEventListener('click', (e) => {
         e.preventDefault();
         toggleCart();
     });
+
+    // Search functionality
+    const searchButton = document.getElementById('search-button');
+    const searchInput = document.getElementById('search-input');
+
+    function handleSearch() {
+        const query = searchInput.value.toLowerCase();
+        const products = document.querySelectorAll('.product');
+
+        products.forEach(product => {
+            const name = product.querySelector('h3').textContent.toLowerCase();
+            if (name.includes(query)) {
+                product.style.display = 'block';
+            } else {
+                product.style.display = 'none';
+            }
+        });
+    }
+
+    if (searchButton && searchInput) {
+        searchButton.addEventListener('click', handleSearch);
+        searchInput.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter') {
+                handleSearch();
+            }
+        });
+    }
 });
